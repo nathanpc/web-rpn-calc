@@ -1,0 +1,58 @@
+/* main.css */
+/* General styling */
+
+html {
+	font-family: "Helvetica Neue", Helvetica;
+	background-color: rgb(242, 242, 242);
+}
+
+#log {
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	-webkit-box-orient: horizontal;
+	-moz-box-orient: horizontal;
+	box-sizing: horizontal;
+
+	-webkit-box-flex: 2;
+	-moz-box-flex: 2;
+	box-flex: 2;
+}
+
+#log > ul {
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	box-sizing: vertical;
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+#log > ul.symbols {
+	width: 30px;
+	border-right: 1px solid rgb(197, 197, 197);
+}
+
+#log > ul > li {
+	height: 19px;
+	text-align: center;
+}
+
+#log > ul.numbers > li {
+	padding-left: 8px;
+}
