@@ -10,6 +10,9 @@
 
 		<title>RPN Calc</title>
 
+		<!-- Libraries -->
+		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+
 		<!-- Add To Home Screen -->
 		<link rel="stylesheet" type="text/css" href="lib/add2home/style/add2home.css">
 		<script src="lib/add2home/src/add2home.js" type="text/javascript"></script>
@@ -20,6 +23,7 @@
 
 		<!-- Javascript -->
 		<script src="js/main.js" type="text/javascript"></script>
+		<script src="js/rpn.js" type="text/javascript"></script>
 
 		<!-- Google Analytics
 		<script type="text/javascript">
@@ -36,18 +40,14 @@
 			<div id="log">
 				<!-- Symbols -->
 				<ul class="symbols">
-					<li></li>
-					<li>+</li>
-					<li>=</li>
 				</ul>
 
 				<!-- Numbers -->
 				<ul class="numbers">
-					<li>10</li>
-					<li>2</li>
-					<li>12</li>
 				</ul>
 			</div>
+
+			<input type="text" id="preview" />
 		</div>
 	</body>
 </html>
