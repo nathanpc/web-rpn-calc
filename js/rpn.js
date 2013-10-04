@@ -3,21 +3,23 @@
 
 var rpn_stack = [];
 
-function print_result(value) {
-	$("#log > ul.symbols").append("<li>=</li>");
-	$("#log > ul.numbers").append("<li>" + value + "</li>");
+function print_stack() {
+	$("#log > ul").html("");
+
+	for (var i = 0; i < rpn_stack.length; i++) {
+		$("#log > ul").append("<li>" + rpn_stack[i] + "</li>");
+	}
 }
 
 function operate(symbol) {
 	r(Number($("#input").val()));
 	$("#input").val("");
 
-	if (symbol === "Enter") {
-		$("#log > ul.symbols").append("<li></li>");
-	} else if (symbol === "+") {
-		$("#log > ul.symbols").append("<li>+</li>");
-		print_result(r("+"));
+	if (symbol === "+") {
+		r("+");
 	}
+
+	print_stack();
 }
 
 function r(input) {

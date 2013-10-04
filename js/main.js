@@ -14,6 +14,9 @@ function onload() {
 		styling.setup();
 	});
 
+	// Actions.
+	action.setup();
+
 	// Check for Cache updates.
 	/*window.applicationCache.addEventListener("updateready", function (e) {
 		console.log("Update available");
@@ -34,8 +37,22 @@ function onload() {
 	}
 }
 
-var styling = {};
+var action = {};
+action.setup = function () {
+	$(".number").click(function () {
+		$("#input").val($("#input").val() + this.innerHTML);
+	});
 
+	$(".operator").click(function () {
+		operate(this.innerHTML);
+	});
+
+	$(".enter").click(function () {
+		operate("Enter");
+	});
+}
+
+var styling = {};
 styling.setup = function () {
 	// Keypad.
 	var main_btn_size = $(window).width() / 5;
