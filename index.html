@@ -11,7 +11,8 @@
 		<title>RPN Calc</title>
 
 		<!-- Libraries -->
-		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+		<!--<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>-->
+		<script src="lib/jquery-2.0.3.min.js"></script>
 
 		<!-- Add To Home Screen -->
 		<link rel="stylesheet" type="text/css" href="lib/add2home/style/add2home.css">
@@ -38,16 +39,56 @@
 	<body>
 		<div id="Home" class="screen">
 			<div id="log">
-				<!-- Symbols -->
-				<ul class="symbols">
-				</ul>
-
-				<!-- Numbers -->
-				<ul class="numbers">
+				<ul>
 				</ul>
 			</div>
 
-			<input type="text" id="preview" />
+			<div class="rest-container">
+				<input type="text" id="input" />
+
+				<div class="keypad">
+					<div class="top-pad">
+						<button>&#8730;</button>
+						<button>1/x</button>
+						<button>ln</button>
+						<button>log</button>
+						<button>CLR</button>
+					</div>
+
+					<div class="main-pad">
+						<div class="pad">
+							<button>y<sup>x<sup></button><br />
+							<button>DEL</button><br />
+							<button class="enter">Enter</button>
+						</div>
+
+						<div class="numbers pad">
+							<button>9</button>
+							<button>8</button>
+							<button>7</button>
+							<br />
+							<button>6</button>
+							<button>5</button>
+							<button>4</button>
+							<br />
+							<button>3</button>
+							<button>2</button>
+							<button>1</button>
+							<br />
+							<button>&#177;</button>
+							<button>0</button>
+							<button>.</button>
+						</div>
+
+						<div class="pad">
+							<button>&#247;</button><br />
+							<button>&#215;</button><br />
+							<button>-</button><br />
+							<button>+</button><br />
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

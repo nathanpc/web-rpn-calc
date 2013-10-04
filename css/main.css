@@ -15,16 +15,62 @@ html {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 
+	width: 100%;
+	border-bottom: solid 1px #b7b7b7;
+}
+
+#log > ul {
+	margin: 0;
+	padding: 5px 0;
+
+	list-style: none;
+}
+
+#log > ul > li {
+	height: 19px;
+
+	text-align: right;
+}
+
+#input {
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	width: 100%;
+	margin-top: 5px;
+	padding-right: 5px;
+
+	border: none;
+	background: none;
+	text-align: right;
+}
+
+.keypad {
+	margin-top: 5px;
+}
+
+.keypad > .main-pad {
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
 	-webkit-box-orient: horizontal;
 	-moz-box-orient: horizontal;
 	box-sizing: horizontal;
 
-	-webkit-box-flex: 2;
-	-moz-box-flex: 2;
-	box-flex: 2;
+	width: 100%;
 }
 
-#log > ul {
+.keypad > .main-pad > .pad {
 	display: box;
 	display: -webkit-box;
 	display: -moz-box;
@@ -36,23 +82,14 @@ html {
 	-webkit-box-orient: vertical;
 	-moz-box-orient: vertical;
 	box-sizing: vertical;
-
-	margin: 0;
-	padding: 0;
-
-	list-style: none;
 }
 
-#log > ul.symbols {
-	width: 30px;
-	border-right: 1px solid rgb(197, 197, 197);
-}
+.keypad button {
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
 
-#log > ul > li {
-	height: 19px;
-	text-align: center;
-}
-
-#log > ul.numbers > li {
-	padding-left: 8px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }

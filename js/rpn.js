@@ -3,16 +3,14 @@
 
 var rpn_stack = [];
 
-// TODO: Just add a horizontal separator and clean the stack when the user hits the Clear button.
-
 function print_result(value) {
 	$("#log > ul.symbols").append("<li>=</li>");
 	$("#log > ul.numbers").append("<li>" + value + "</li>");
 }
 
 function operate(symbol) {
-	r(Number($("#preview").val()));
-	$("#preview").val("");
+	r(Number($("#input").val()));
+	$("#input").val("");
 
 	if (symbol === "Enter") {
 		$("#log > ul.symbols").append("<li></li>");
