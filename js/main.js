@@ -40,7 +40,13 @@ function onload() {
 var action = {};
 action.setup = function () {
 	$(".number").click(function () {
-		$("#input").val($("#input").val() + this.innerHTML);
+		var number = this.innerHTML;
+
+		if (number !== ".") {
+			$("#input").val($("#input").val() + number);
+		} else if ($("#input").val().match(/\./) === null) {
+			$("#input").val($("#input").val() + number);
+		}
 	});
 
 	$(".operator").click(function () {
@@ -63,6 +69,10 @@ styling.setup = function () {
 	$(".keypad .enter").css("height", (main_btn_size * 2) + "px ");
 
 	// Logs.
-	$("#log").css("height", ($(window).height() - $(".rest-container").height() - 10) + "px");
+	$("#log").css("height", ($(window).height() - $(".rest-container").height() - 12) + "px");
+	styling.list_item();
+}
+
+styling.list_item = function () {
 	$("#log > ul > li").css("width", ($(window).width() - 5) + "px");
 }
