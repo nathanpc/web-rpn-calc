@@ -10,7 +10,7 @@ function print_stack() {
 		$("#log > ul").append("<li>" + rpn_stack[i] + "</li>");
 	}
 
-	styling.list_item();
+	styling.setup(true);
 }
 
 function operate(symbol) {
@@ -19,7 +19,7 @@ function operate(symbol) {
 		$("#input").val("");
 	}
 
-	if ((symbol !== "Enter") && (symbol !== "Drop") && (symbol !== "Clear")) {
+	if (symbol !== "Enter") {
 		r(symbol);
 	}
 
