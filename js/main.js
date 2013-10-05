@@ -4,7 +4,6 @@
 $(document).ready(function () {
 	// Style stuff.
 	styling.setup(false);
-	$("#log").css("height", ($(window).height() - $(".rest-container").height() - 12) + "px");
 	$(window).resize(function () {
 		styling.setup(true);
 	});
@@ -70,14 +69,14 @@ action.setup = function () {
 		// Clear.
 		rpn_stack = [];
 		$("#input").val("");
-		print_stack();
+		print_stack(true);
 	});
 
 	$(".drop").click(function () {
 		// Drop.
 		if ($("#input").val() === "") {
 			pop();
-			print_stack();
+			print_stack(true);
 		} else {
 			$("#input").val("");
 		}
@@ -98,6 +97,8 @@ styling.setup = function (resize_logs) {
 	if (resize_logs) {
 		styling.list_item();
 		$("#log").css("height", ($(window).height() - $(".rest-container").height() - 1) + "px");
+	} else {
+		$("#log").css("height", ($(window).height() - $(".rest-container").height() - 12) + "px");
 	}
 }
 

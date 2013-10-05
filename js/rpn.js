@@ -3,14 +3,14 @@
 
 var rpn_stack = [];
 
-function print_stack() {
+function print_stack(stl) {
 	$("#log > ul").html("");
 
 	for (var i = 0; i < rpn_stack.length; i++) {
 		$("#log > ul").append("<li>" + rpn_stack[i] + "</li>");
 	}
 
-	styling.setup(true);
+	styling.setup(!stl);
 }
 
 function operate(symbol) {
@@ -49,33 +49,35 @@ function r(input) {
 		push(result);
 		return result;
 	} else {
-		var n = [ 0, 0 ];
-		n[1] = pop();
-		n[0] = pop();
+		if (rpn_stack.length > 1) {
+			var n = [ 0, 0 ];
+			n[1] = pop();
+			n[0] = pop();
 
-		var result;
-		if (input === "+") {
-			// +
-			result = n[0] + n[1];
-		} else if (input === "-") {
-			// -
-			result = n[0] - n[1];
-		} else if (input === "\u00D7") {
-			// *
-			result = n[0] * n[1];
-		} else if (input === "\u00F7") {
-			// /
-			result = n[0] / n[1];
-		} else if (input === "y<sup>x</sup>") {
-			// ^
-			result = Math.pow(n[0], n[1]);
-		} else if (input === "log") {
-			// log
-			result = Math.log(n[1]) / Math.log(n[0]);
+			var result;
+			if (input === "+") {
+				// +
+				result = n[0] + n[1];
+			} else if (input === "-") {
+				// -
+				result = n[0] - n[1];
+			} else if (input === "\u00D7") {
+				// *
+				result = n[0] * n[1];
+			} else if (input === "\u00F7") {
+				// /
+				result = n[0] / n[1];
+			} else if (input === "y<sup>x</sup>") {
+				// ^
+				result = Math.pow(n[0], n[1]);
+			} else if (input === "log") {
+				// log
+				result = Math.log(n[1]) / Math.log(n[0]);
+			}
+
+			push(result);
+			return result;
 		}
-
-		push(result);
-		return result;
 	}
 }
 
